@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08090b" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="XS Prospecção" />
+    <title>XS Prospecção — Do primeiro alô ao cliente fechado</title>
+    <meta name="author" content="Gabriel Yamashita Marcelino" />
+    <meta name="copyright" content="© 2026 Gabriel Yamashita Marcelino. Todos os direitos reservados." />
+    <meta
+      name="description"
+      content="Encontre empresas da sua cidade por nicho e bairro, organize seus leads num lugar só e acompanhe cada contato, da ligação ao WhatsApp, até virar cliente. Para quem vende sites e serviços digitais."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="XS Prospecção" />
+    <meta property="og:title" content="XS Prospecção — Do primeiro alô ao cliente fechado" />
+    <meta
+      property="og:description"
+      content="Captação e organização de clientes para quem vende sites: busca de empresas com telefone e site, ligação com roteiro, retornos, WhatsApp, clientes e projetos."
+    />
+    <meta name="twitter:card" content="summary" />
+    <script>
+      // Aplica o tema salvo antes do primeiro desenho (evita piscar)
+      try {
+        var p = localStorage.getItem('central-prospeccao:tema') || 'dark';
+        var light = p === 'light' || (p === 'system' && matchMedia('(prefers-color-scheme: light)').matches);
+        document.documentElement.dataset.theme = light ? 'light' : 'dark';
+      } catch (e) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+
+      // Seed de leads demonstrativos na primeira execução
+      try {
+        if (!localStorage.getItem('xs-prospeccao:v1')) {
+          var starterLeads = {
+            leads: [
+              {
+                id: 'lead-demo-1',
+                empresa: 'Pizzaria Bella Napoli',
+                nicho: 'Pizzaria / Restaurante',
+                telefone: '11987654321',
+                whatsapp: '11987654321',
+                instagram: '@bellanapolipizza',
+                website: '',
+                endereco: 'Rua das Flores, 120',
+                cidade: 'São Paulo',
+                estado: 'SP',
+                avaliacao: 4.8,
+                numero_avaliacoes: 142,
+                pasta: 'Restaurantes',
+                etapa: 'novo',
+                maps_url: 'https://maps.google.com',
+                observacoes: 'Cardápio em PDF no Instagram, precisa de site próprio para pedidos.',
+                status: 'novo',
+                criadoEm: new Date().toISOString()
+              },
+              {
+                id: 'lead-demo-2',
+                empresa: 'Clínica Odonto Prime',
+                nicho: 'Dentista / Odontologia',
+                telefone: '11976543210',
+                whatsapp: '11976543210',
+                instagram: '@odontoprime.sp',
+                website: 'odontoprime.com.br',
+                endereco: 'Av. Paulista, 1500',
+                cidade: 'São Paulo',
+                estado: 'SP',
+                avaliacao: 4.9,
+                numero_avaliacoes: 89,
+                pasta: 'Saúde',
+                etapa: 'contato',
+                maps_url: 'https://maps.google.com',
+                observacoes: 'Site antigo não adaptado para celular. Quer landing page para implantes.',
+                status: 'em_andamento',
+                criadoEm: new Date().toISOString()
+              },
+              {
+                id: 'lead-demo-3',
+                empresa: 'Marmoraria Arte & Pedra',
+                nicho: 'Marmoraria / Construção',
+                telefone: '11965432109',
+                whatsapp: '11965432109',
+                instagram: '@arteepedramarmoraria',
+                website: '',
+                endereco: 'Av. dos Bandeirantes, 3400',
+                cidade: 'São Paulo',
+                estado: 'SP',
+                avaliacao: 4.6,
+                numero_avaliacoes: 47,
+                pasta: 'Serviços',
+                etapa: 'reuniao',
+                maps_url: 'https://maps.google.com',
+                observacoes: 'Interesse em catálogo de bancadas e pias sob medida.',
+                status: 'em_andamento',
+                criadoEm: new Date().toISOString()
+              }
+            ],
+            interactions: [],
+            followups: [],
+            meetings: [],
+            imports: [],
+            settings: {}
+          };
+          localStorage.setItem('xs-prospeccao:v1', JSON.stringify(starterLeads));
+        }
+      } catch (err) {}
+    </script>
+    <script type="module" crossorigin src="/assets/index-BWdpwWHb.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/createLucideIcon-337xXqLk.js">
+    <link rel="modulepreload" crossorigin href="/assets/PageHeader-BLbfOoWd.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-CZVVhKBg.css">
+    <style>
+      #xs-demo-toolbar {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        z-index: 999999;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px;
+        background: rgba(14, 20, 36, 0.92);
+        border: 1px solid rgba(56, 189, 248, 0.35);
+        border-radius: 9999px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 0 15px rgba(56, 189, 248, 0.2);
+        backdrop-filter: blur(12px);
+        font-family: system-ui, -apple-system, sans-serif;
+        font-size: 12px;
+        color: #e2e8f0;
+      }
+      #xs-demo-toolbar button {
+        background: #0284c7;
+        color: #ffffff;
+        border: none;
+        padding: 5px 12px;
+        border-radius: 9999px;
+        font-weight: 600;
+        font-size: 11px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      #xs-demo-toolbar button:hover {
+        background: #38bdf8;
+        transform: translateY(-1px);
+      }
+      #xs-demo-toolbar .indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #10b981;
+        box-shadow: 0 0 8px #10b981;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <div id="xs-demo-toolbar">
+      <span class="indicator"></span>
+      <span id="xs-mode-label">⚡ Modo: <strong>Painel Liberado</strong></span>
+      <button id="xs-toggle-btn" onclick="toggleXsDemoMode()">Ver Landing Page</button>
+    </div>
+
+    <script>
+      function updateToolbarDisplay() {
+        var isDemo = localStorage.getItem('xs_demo_mode') !== 'false';
+        var label = document.getElementById('xs-mode-label');
+        var btn = document.getElementById('xs-toggle-btn');
+        if (isDemo) {
+          label.innerHTML = '⚡ Modo: <strong>Painel Liberado</strong>';
+          btn.textContent = 'Ver Landing Page';
+          btn.style.background = '#334155';
+        } else {
+          label.innerHTML = '🌐 Modo: <strong>Landing Page</strong>';
+          btn.textContent = 'Acessar Painel';
+          btn.style.background = '#0284c7';
+        }
+      }
+
+      function toggleXsDemoMode() {
+        var isDemo = localStorage.getItem('xs_demo_mode') !== 'false';
+        localStorage.setItem('xs_demo_mode', isDemo ? 'false' : 'true');
+        window.location.href = '/';
+      }
+
+      updateToolbarDisplay();
+    </script>
+  </body>
+</html>

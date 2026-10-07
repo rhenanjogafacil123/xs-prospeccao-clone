@@ -1,0 +1,4 @@
+# Logs & temporários
+*.log
+.DS_Store
+Thumbs.db
