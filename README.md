@@ -2,6 +2,8 @@
 
 Sistema completo de prospecção de clientes para desenvolvedores, agências e profissionais de vendas digitais.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frhenanjogafacil123%2Fxs-prospeccao-clone)
+
 ---
 
 ## 🚀 Como Executar Localmente (1 Clique)
